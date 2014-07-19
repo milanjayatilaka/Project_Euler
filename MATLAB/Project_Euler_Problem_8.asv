@@ -1,0 +1,28 @@
+clear;
+
+fid = -1;
+msg = '';
+while fid < 0
+    disp(msg);
+    filename = 'long_assed_number.txt';
+    [fid,msg] = fopen(filename);
+    string = fscanf(fid,'%s');
+    fclose('all');
+end
+
+long_assed_number = zeros(1,length(string));
+
+for i = 1:length(string)
+    long_assed_number(j) = str2num(string(j));
+end
+
+for j = 1:987
+    for k = j:(j + 13)
+        product = product*(long_assed_number(k));
+    end
+    if product > datum
+        datum = product;
+    end
+end
+
+fprintf('The Largest Product of Adjacent Numbers in this 1000 Digit Number is %d

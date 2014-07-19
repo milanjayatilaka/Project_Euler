@@ -1,0 +1,18 @@
+clear;
+l = 1;
+
+for i = 1:1000
+    for j = 1:1000
+        k = sqrt( i*i + j*j );
+        if mod(k,1) == 0
+            sum = i + j + k;
+            store(l,1) = i;
+            store(l,2) = j;
+            store(l,3) = k;
+            store(l,4) = sum;
+            l = l + 1;
+            plot3(i,j,k);
+            hold on;
+        end
+    end
+end

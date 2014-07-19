@@ -1,0 +1,21 @@
+clear;
+candidate = 1;
+sum = 0;
+
+% the exit condition is if ALL integers from 1 to 20 evenly divide the
+% candidate
+while 1
+    % cycle through all the possible divisors
+    sum = 0;
+    for j = 20:-1:1
+        % if the candidate is divisible, check the box
+        if mod(candidate,j) == 0
+            sum = sum + 1;
+        end
+    end
+    if sum == 20
+        solution = candidate;
+        break
+    end
+    candidate = candidate + 1;
+end
